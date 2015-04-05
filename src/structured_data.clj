@@ -69,7 +69,7 @@
   (map count collection))
 
 (defn second-elements [collection]
-  :-)
+  (map #(get % 1) collection))
 
 (defn titles [books]
   :-)
