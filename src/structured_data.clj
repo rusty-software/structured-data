@@ -5,7 +5,10 @@
     (Math/pow added added)))
 
 (defn spiff [v]
-  :-)
+  "Not expressing expectations in the instructions is... frustrating"
+  (let [first (get v 0)
+        third (get v 2)]
+    (+ first third)))
 
 (defn cutify [v]
   :-)
