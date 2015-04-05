@@ -35,10 +35,13 @@
   (= (width rectangle) (height rectangle)))
 
 (defn area [rectangle]
-  :-)
+  (* (width rectangle) (height rectangle)))
 
 (defn contains-point? [rectangle point]
-  :-)
+  (let [[[x-low y-low] [x-high y-high]] rectangle
+        [x y] point]
+    (and (<= x-low x x-high)
+         (<= y-low y y-high))))
 
 (defn contains-rectangle? [outer inner]
   :-)
