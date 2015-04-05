@@ -44,7 +44,9 @@
          (<= y-low y y-high))))
 
 (defn contains-rectangle? [outer inner]
-  :-)
+  (let [[lower-left upper-right] inner]
+    (and (contains-point? outer lower-left)
+         (contains-point? outer upper-right))))
 
 (defn title-length [book]
   :-)
