@@ -117,7 +117,10 @@
   (str (:title book) ", written by " (authors->string (:authors book))))
 
 (defn books->string [books]
-  :-)
+  (cond
+    (empty? books) "No books."
+    (= 1 (count books)) (str "1 book. " (book->string (get books 0)) ".")
+    :else (str (count books) " books. " (books->string books) ".")))
 
 (defn books-by-author [author books]
   :-)
