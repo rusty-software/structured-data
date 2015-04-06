@@ -120,7 +120,7 @@
   (cond
     (empty? books) "No books."
     (= 1 (count books)) (str "1 book. " (book->string (get books 0)) ".")
-    :else (str (count books) " books. " (books->string books) ".")))
+    :else (str (count books) " books. " (apply str (interpose ". " (map book->string books))) ".")))
 
 (defn books-by-author [author books]
   (filter (fn [book] (has-author? book author)) books))
@@ -135,6 +135,6 @@
   (< 0 (count (living-authors (:authors book)))))
 
 (defn books-by-living-authors [books]
-  :-)
+  (filter has-a-living-author? books))
 
 ; %________%
